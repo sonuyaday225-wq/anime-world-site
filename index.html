@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World - HD Anime Pictures & Art</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card-description {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+        
+        .category-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .category-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌸 Anime World 🌸</h1>
+            <p class="subtitle">Discover Amazing HD Anime Pictures & Artwork</p>
+        </header>
+        
+        <div class="content">
+            <div class="categories">
+                <span class="category-tag">Action Anime</span>
+                <span class="category-tag">Romance</span>
+                <span class="category-tag">Fantasy</span>
+                <span class="category-tag">Sci-Fi</span>
+                <span class="category-tag">Slice of Life</span>
+                <span class="category-tag">Adventure</span>
+            </div>
+            
+            <div class="gallery">
+                <div class="card">
+                    <div class="card-image">🎭</div>
+                    <div class="card-content">
+                        <div class="card-title">Character Art</div>
+                        <div class="card-description">Beautiful HD character illustrations and portraits from popular anime series</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">🌆</div>
+                    <div class="card-content">
+                        <div class="card-title">Scenic Backgrounds</div>
+                        <div class="card-description">Stunning anime-style landscapes and cityscapes in high definition</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">⚔️</div>
+                    <div class="card-content">
+                        <div class="card-title">Action Scenes</div>
+                        <div class="card-description">Epic battle moments and dynamic action sequences captured in HD</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">💫</div>
+                    <div class="card-content">
+                        <div class="card-title">Fantasy Art</div>
+                        <div class="card-description">Magical and fantastical anime artwork with incredible detail</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">🌸</div>
+                    <div class="card-content">
+                        <div class="card-title">Aesthetic Vibes</div>
+                        <div class="card-description">Soft, aesthetic anime pictures perfect for wallpapers and inspiration</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">🎨</div>
+                    <div class="card-content">
+                        <div class="card-title">Fan Art Gallery</div>
+                        <div class="card-description">Community-created anime fan art showcasing incredible talent</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Anime World</strong> - Your destination for HD anime pictures and artwork</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Explore, discover, and enjoy the best anime content</p>
+        </footer>
+    </div>
+</body>
+</html>
