@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime World - HD Anime Pictures & Art</title>
+    <title>Anime World | Premium HD Anime Content Platform</title>
     <style>
         * {
             margin: 0;
@@ -12,194 +12,535 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
         }
         
-        .container {
-            max-width: 1200px;
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95em;
+        }
+        
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 40px;
             text-align: center;
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+            position: relative;
             overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: -50px auto 0;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stat-card {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 40px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #b0b0b0;
+            font-size: 1.1em;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .gallery-card {
+            background: rgba(26, 26, 46, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
             cursor: pointer;
         }
         
-        .card:hover {
+        .gallery-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(0, 212, 255, 0.5);
         }
         
         .card-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 250px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3em;
+            font-size: 4em;
+            position: relative;
+            overflow: hidden;
         }
         
-        .card-content {
-            padding: 20px;
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .card-category {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
         .card-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
         
         .card-description {
-            color: #666;
-            font-size: 0.9em;
-            line-height: 1.5;
+            color: #b0b0b0;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
         
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 30px 0;
-            justify-content: center;
+        /* Features Section */
+        .features {
+            background: rgba(26, 26, 46, 0.4);
+            padding: 100px 40px;
+            margin: 100px 0;
         }
         
-        .category-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: transform 0.2s ease;
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
         
-        .category-tag:hover {
-            transform: scale(1.05);
-        }
-        
-        footer {
-            background: #f8f9fa;
-            padding: 30px;
+        .feature-item {
             text-align: center;
+            padding: 40px;
+        }
+        
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .feature-text {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 60px 40px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #666;
-            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌸 Anime World 🌸</h1>
-            <p class="subtitle">Discover Amazing HD Anime Pictures & Artwork</p>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ANIME WORLD</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium HD Anime Content</h1>
+            <p>Discover the finest collection of high-definition anime artwork, wallpapers, and illustrations curated for enthusiasts worldwide.</p>
+            <a href="#gallery" class="cta-button">Explore Gallery</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">HD Images</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Anime Series</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">4K</div>
+            <div class="stat-label">Ultra HD Quality</div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="content-section" id="gallery">
+        <div class="section-header">
+            <h2>Featured Collections</h2>
+            <p>Professionally curated anime content in stunning high definition</p>
+        </div>
         
-        <div class="content">
-            <div class="categories">
-                <span class="category-tag">Action Anime</span>
-                <span class="category-tag">Romance</span>
-                <span class="category-tag">Fantasy</span>
-                <span class="category-tag">Sci-Fi</span>
-                <span class="category-tag">Slice of Life</span>
-                <span class="category-tag">Adventure</span>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <div class="card-image">🎭</div>
+                <div class="card-body">
+                    <span class="card-category">CHARACTER ART</span>
+                    <h3 class="card-title">Premium Character Portraits</h3>
+                    <p class="card-description">High-resolution character illustrations featuring detailed artwork from top anime series with professional color grading.</p>
+                </div>
             </div>
             
-            <div class="gallery">
-                <div class="card">
-                    <div class="card-image">🎭</div>
-                    <div class="card-content">
-                        <div class="card-title">Character Art</div>
-                        <div class="card-description">Beautiful HD character illustrations and portraits from popular anime series</div>
-                    </div>
+            <div class="gallery-card">
+                <div class="card-image">🌃</div>
+                <div class="card-body">
+                    <span class="card-category">LANDSCAPES</span>
+                    <h3 class="card-title">Cinematic Backgrounds</h3>
+                    <p class="card-description">Breathtaking anime-style landscapes and cityscapes perfect for desktop wallpapers and creative projects.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="card-image">🌆</div>
-                    <div class="card-content">
-                        <div class="card-title">Scenic Backgrounds</div>
-                        <div class="card-description">Stunning anime-style landscapes and cityscapes in high definition</div>
-                    </div>
+            </div>
+            
+            <div class="gallery-card">
+                <div class="card-image">⚡</div>
+                <div class="card-body">
+                    <span class="card-category">ACTION</span>
+                    <h3 class="card-title">Dynamic Action Shots</h3>
+                    <p class="card-description">Epic battle scenes and high-energy moments captured in crystal-clear 4K resolution with stunning detail.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="card-image">⚔️</div>
-                    <div class="card-content">
-                        <div class="card-title">Action Scenes</div>
-                        <div class="card-description">Epic battle moments and dynamic action sequences captured in HD</div>
-                    </div>
+            </div>
+            
+            <div class="gallery-card">
+                <div class="card-image">✨</div>
+                <div class="card-body">
+                    <span class="card-category">FANTASY</span>
+                    <h3 class="card-title">Magical Artwork</h3>
+                    <p class="card-description">Enchanting fantasy scenes featuring magical elements, mystical creatures, and otherworldly environments.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="card-image">💫</div>
-                    <div class="card-content">
-                        <div class="card-title">Fantasy Art</div>
-                        <div class="card-description">Magical and fantastical anime artwork with incredible detail</div>
-                    </div>
+            </div>
+            
+            <div class="gallery-card">
+                <div class="card-image">🌸</div>
+                <div class="card-body">
+                    <span class="card-category">AESTHETIC</span>
+                    <h3 class="card-title">Aesthetic Collection</h3>
+                    <p class="card-description">Carefully selected aesthetic anime visuals with soft colors and artistic composition for modern displays.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="card-image">🌸</div>
-                    <div class="card-content">
-                        <div class="card-title">Aesthetic Vibes</div>
-                        <div class="card-description">Soft, aesthetic anime pictures perfect for wallpapers and inspiration</div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">🎨</div>
-                    <div class="card-content">
-                        <div class="card-title">Fan Art Gallery</div>
-                        <div class="card-description">Community-created anime fan art showcasing incredible talent</div>
-                    </div>
+            </div>
+            
+            <div class="gallery-card">
+                <div class="card-image">🎨</div>
+                <div class="card-body">
+                    <span class="card-category">FAN ART</span>
+                    <h3 class="card-title">Community Creations</h3>
+                    <p class="card-description">Exceptional fan-made artwork showcasing incredible talent from the global anime art community.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Why Choose Anime World</h2>
+            <p>Professional-grade features for anime enthusiasts</p>
+        </div>
         
-        <footer>
-            <p><strong>Anime World</strong> - Your destination for HD anime pictures and artwork</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Explore, discover, and enjoy the best anime content</p>
-        </footer>
-    </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Curated Quality</h3>
+                <p class="feature-text">Every image is hand-selected and quality-checked to ensure premium standards.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Multi-Device</h3>
+                <p class="feature-text">Optimized for all devices - desktop, tablet, and mobile with responsive design.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Fast Loading</h3>
+                <p class="feature-text">Lightning-fast performance with optimized delivery and caching technology.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Daily Updates</h3>
+                <p class="feature-text">Fresh content added regularly to keep your collection current and exciting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Anime World</h3>
+                <p style="color: #b0b0b0; line-height: 1.7;">Your premier destination for high-definition anime content. We provide professionally curated collections for enthusiasts worldwide.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Action & Adventure</a></li>
+                    <li><a href="#">Romance & Drama</a></li>
+                    <li><a href="#">Fantasy & Magic</a></li>
+                    <li><a href="#">Sci-Fi & Mecha</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Download Guide</a></li>
+                    <li><a href="#">Usage Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Anime World. All rights reserved. | Premium HD Anime Content Platform</p>
+        </div>
+    </footer>
 </body>
 </html>
